@@ -47,7 +47,7 @@
                         <div class="flex items-center mb-6">
                             <a
                                 class="w-12 h-12 rounded-full flex items-center justify-center border border-white text-black dark:text-white hover:bg-light-secondary hover:border-light-secondary dark:hover:bg-dark-secondary dark:hover:border-dark-secondary mr-3 sm:mr-4"
-                                href="https://facebook.com/laraveller"
+                                href="https://www.facebook.com/sirlinh90"
                             >
                                 <svg
                                     width="8"
@@ -62,7 +62,7 @@
                             </a>
                             <a
                                 class="w-12 h-12 rounded-full flex items-center justify-center border border-white text-black dark:text-white hover:bg-light-secondary hover:border-light-secondary dark:hover:bg-dark-secondary dark:hover:border-dark-secondary mr-3 sm:mr-4"
-                                href="https://facebook.com/laraveller"
+                                href="https://www.facebook.com/sirlinh90"
                             >
                                 <svg
                                     width="16"
@@ -77,7 +77,7 @@
                             </a>
                             <a
                                 class="w-12 h-12 rounded-full flex items-center justify-center border border-white text-black dark:text-white hover:bg-light-secondary hover:border-light-secondary dark:hover:bg-dark-secondary dark:hover:border-dark-secondary mr-3 sm:mr-4"
-                                href="https://facebook.com/laraveller"
+                                href="https://www.facebook.com/sirlinh90"
                             >
                                 <svg
                                     width="16"
@@ -92,7 +92,7 @@
                             </a>
                             <a
                                 class="w-12 h-12 rounded-full flex items-center justify-center border border-white text-black dark:text-white hover:bg-light-secondary hover:border-light-secondary dark:hover:bg-dark-secondary dark:hover:border-dark-secondary mr-3 sm:mr-4"
-                                href="https://facebook.com/laraveller"
+                                href="https://www.facebook.com/sirlinh90"
                             >
                                 <svg
                                     width="14"
@@ -112,8 +112,8 @@
                     class="flex flex-1 justify-end items-center h-full mt-8 md:mt-0"
                 >
                     <img
-                        class="rounded-lg"
-                        src="http://localhost:8000/img/hero-image-01.png"
+                        class="rounded-lg" style="width: 491px; height: 571px;"
+                        src="http://localhost:8000/img/hero2.jpg"
                         alt="Hero"
                     />
                 </div>
