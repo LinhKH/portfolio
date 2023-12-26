@@ -8,7 +8,7 @@
                 <div class="flex space-x-6 items-center justify-center">
                     <img
                         class="h-8 w-auto"
-                        src="http://portfolio.test/img/logo.png"
+                        src="http://localhost:8000/img/logo2.png"
                         alt="Linh Dev"
                     />
                 </div>

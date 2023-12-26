@@ -13,6 +13,11 @@ const showMobileMenu = ref("false");
                 target="_blank"
                 class="flex items-center space-x-3 rtl:space-x-reverse"
             >
+                <img
+                    src="http://localhost:8000/img/logo2.png"
+                    class="mr-3 h-6 sm:h-9"
+                    alt="Linh Dev Logo"
+                />
                 <span
                     class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"
                     >Linh Dev</span
