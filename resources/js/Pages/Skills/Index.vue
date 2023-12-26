@@ -39,7 +39,7 @@ defineProps({
                                 <th scope="col" class="py-3 px-6">ID</th>
                                 <th scope="col" class="py-3 px-6">Name</th>
                                 <th scope="col" class="py-3 px-6">Image</th>
-                                <th scope="col" class="py-3 px-6"></th>
+                                <th scope="col" class="py-3 px-6">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
