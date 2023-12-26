@@ -1,5 +1,6 @@
 <script setup>
 import { Head, Link } from '@inertiajs/vue3';
+import FrontendLayout from '@/Layouts/Frontend.vue'
 
 defineProps({
     canLogin: {
@@ -21,6 +22,10 @@ defineProps({
 
 <template>
     <Head title="Welcome to Linh's portfolio" />
+    <FrontendLayout>
+
+
+    </FrontendLayout>
 </template>
 
 <style>
