@@ -5,8 +5,9 @@ defineProps({
 });
 </script>
 <template>
-    <Link
+    <a
         :href="project.project_url"
+        target="_blank"
         class="group flex flex-col items-center text-center cursor-pointer"
         v-motion
         :initial="{
@@ -34,5 +35,5 @@ defineProps({
         >
             {{ project.name }}
         </h3>
-    </Link>
+    </a>
 </template>
