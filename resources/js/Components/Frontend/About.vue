@@ -31,7 +31,7 @@
                             About Me
                         </h2>
                         <P class="mb-4 text-accent"
-                            >Full Stack Web Development</P
+                            >Full Stack Web Developer</P
                         >
                         <hr class="mb-8 opacity-90 dark:opacity-5" />
                         <p class="mb-8">

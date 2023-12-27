@@ -11,6 +11,7 @@ use Inertia\Inertia;
 
 Route::get('/', [WelcomeController::class, 'welcome'])->name('welcome');
 Route::post('/contact', ContactController::class)->name('contact');
+Route::get('/download',[WelcomeController::class, 'download'])->name('download');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', function () {

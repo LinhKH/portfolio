@@ -113,9 +113,7 @@ const submit = () => {
                                 Current Location
                             </h4>
                             <P class="mb-1 text-paragraph ml-2">60 C1, Phường 13, quận Tân Bình, Thành phố Hồ Chí Minh</P>
-                            <p class="text-accent font-normal ml-2">
-                                Serving clients worldwide.
-                            </p>
+                            
                         </div>
                     </div>
                 </div>

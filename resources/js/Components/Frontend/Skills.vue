@@ -6,6 +6,9 @@ defineProps({
 <template>
     <section class="bg-light-tail-100 dark:bg-dark-navy-500 py-16">
         <div class="container mx-auto">
+            <div class="flex flex-col items-center text-center">
+                <h2 class="section-title">Skills</h2>
+            </div>
             <div class="grid grid-cols-8 md:grid-flow-col">
                 <div
                     class="flex items-center justify-center"
