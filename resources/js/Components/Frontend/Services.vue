@@ -20,11 +20,6 @@
         >
             <div class="flex flex-col items-center text-center">
                 <h2 class="section-title">What I do for clients</h2>
-                <p class="subtitle">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Fuga veniam labore nisium illum cupiditate reiciendis a
-                    numquam
-                </p>
             </div>
             <div class="grid lg:grid-cols-4 gap-8">
                 <div
@@ -49,10 +44,7 @@
                         </svg>
                     </div>
                     <h4 class="text-xl font-medium mb-2">Web Design</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Odio perferendis volm quibusdam ullam qui dolore.
-                    </p>
+                    
                 </div>
                 <div
                     class="bg-light-tail-100 dark:bg-dark-navy-500 p-6 rounded-2xl"
@@ -81,10 +73,7 @@
                         </svg>
                     </div>
                     <h4 class="text-xl font-medium mb-2">Web Development</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Odio perferendis volm quibusdam ullam qui dolore.
-                    </p>
+                    
                 </div>
                 <div
                     class="bg-light-tail-100 dark:bg-dark-navy-500 p-6 rounded-2xl"
@@ -107,11 +96,8 @@
                             />
                         </svg>
                     </div>
-                    <h4 class="text-xl font-medium mb-2">Branding</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Odio perferendis volm quibusdam ullam qui dolore.
-                    </p>
+                    <h4 class="text-xl font-medium mb-2">Database</h4>
+                    
                 </div>
                 <div
                     class="bg-light-tail-100 dark:bg-dark-navy-500 p-6 rounded-2xl"
@@ -135,10 +121,7 @@
                         </svg>
                     </div>
                     <h4 class="text-xl font-medium mb-2">SEO</h4>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing
-                        elit. Odio perferendis volm quibusdam ullam qui dolore.
-                    </p>
+                    
                 </div>
             </div>
         </div>
