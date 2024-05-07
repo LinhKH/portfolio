@@ -22,8 +22,8 @@ class WelcomeController extends Controller
 
     public function download() {
 
-        $file= public_path('uploads/cv/KieuHoaLinh_CV_FullStack.docx');
+        $file= public_path('uploads/cv/KieuHoaLinh_CV_PHP.pdf');
 
-        return response()->download($file, 'KieuHoaLinh_CV_FullStack.docx');
+        return response()->download($file, 'KieuHoaLinh_CV_PHP.pdf');
     }
 }
