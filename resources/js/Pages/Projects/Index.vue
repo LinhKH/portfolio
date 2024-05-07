@@ -43,7 +43,7 @@ defineProps({
                                 </th>
                                 <td class="py-4 px-6">{{ project.name }}</td>
                                 <td class="py-4 px-6">
-                                    {{ project.skill.name }}
+                                    <span v-for="skill in project.skills" class="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300">{{ skill.name }}</span>
                                 </td>
                                 <td class="py-4 px-6">
                                     <img :src="project.image" class="w-12 h-12 rounded-full" />

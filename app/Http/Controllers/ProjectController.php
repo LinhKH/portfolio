@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\ProjectResource;
+
 use App\Models\Project;
+use App\Models\ProjectSkill;
 use App\Models\Skill;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -17,7 +19,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = ProjectResource::collection(Project::with('skill')->get());
+        $projects = ProjectResource::collection(Project::with('skills')->get());
         return Inertia::render('Projects/Index', compact('projects'));
     }
 
@@ -35,20 +37,25 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
+
         $request->validate([
             'image' => ['required', 'image'],
             'name' => ['required', 'min:3'],
-            'skill_id' => ['required']
+            'skills' => ['required', 'exists:skills,id'],
         ]);
+
+        $skills = $request['skills'] ?? [];
 
         if ($request->hasFile('image')) {
             $image = $request->file('image')->store('projects');
-            Project::create([
-                'skill_id' => $request->skill_id,
+
+            $project = Project::create([
                 'name' => $request->name,
                 'image' => $image,
                 'project_url' => $request->project_url
             ]);
+
+            $this->saveSkills($skills, $project);
 
             return Redirect::route('projects.index')->with('message', 'Project created successfully.');
         }
@@ -60,6 +67,8 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
+        $project = $project->load('skills');
+        $project->image = asset('/storage/' . $project->image);
         $skills = Skill::all();
         return Inertia::render('Projects/Edit', compact('project', 'skills'));
     }
@@ -70,10 +79,14 @@ class ProjectController extends Controller
     public function update(Request $request, Project $project)
     {
         $image = $project->image;
+
         $request->validate([
             'name' => ['required', 'min:3'],
-            'skill_id' => ['required']
+            'skills' => ['required', 'exists:skills,id'],
         ]);
+
+        $skills = $request['skills'] ?? [];
+
         if ($request->hasFile('image')) {
             Storage::delete($project->image);
             $image = $request->file('image')->store('projects');
@@ -81,10 +94,13 @@ class ProjectController extends Controller
 
         $project->update([
             'name' => $request->name,
-            'skill_id' => $request->skill_id,
             'project_url' => $request->project_url,
             'image' => $image
         ]);
+        
+
+        $this->saveSkills($skills, $project);
+
         return Redirect::route('projects.index')->with('message', 'Project updated successfully.');
     }
 
@@ -96,5 +112,13 @@ class ProjectController extends Controller
         Storage::delete($project->image);
         $project->delete();
         return Redirect::back()->with('message', 'Project deleted successfully.');
+    }
+
+    private function saveSkills($skillsIds, Project $project)
+    {
+        ProjectSkill::where('project_id', $project->id)->delete();
+        $data = array_map(fn($id) => (['skill_id' => $id, 'project_id' => $project->id]), $skillsIds);
+
+        ProjectSkill::insert($data);
     }
 }

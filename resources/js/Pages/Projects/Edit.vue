@@ -14,7 +14,7 @@ const props = defineProps({
 const form = useForm({
     name: props.project?.name,
     image: null,
-    skill_id: props.project?.skill_id,
+    skills: props.project?.skills.map(sk => sk.id),
     project_url: props.project?.project_url,
 });
 const submit = () => {
@@ -22,13 +22,15 @@ const submit = () => {
         _method: "put",
         name: form.name,
         image: form.image,
-        skill_id: form.skill_id,
+        skills: form.skills,
         project_url: form.project_url,
     });
 };
+
 </script>
 
 <template>
+
     <Head title="Skills Create" />
 
     <AuthenticatedLayout>
@@ -37,13 +39,12 @@ const submit = () => {
                 New Projects
             </h2>
         </template>
-
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <form class="p-4" @submit.prevent="submit">
                     <div>
                         <InputLabel for="skill_id" value="Skill" />
-                        <select v-model="form.skill_id" id="skill_id" name="skill_id"
+                        <select v-model="form.skills" id="skill_id" multiple
                             class="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
                             <option v-for="skill in skills" :key="skill.id" :value="skill.id">
                                 {{ skill.name }}
@@ -67,10 +68,15 @@ const submit = () => {
                         <InputLabel for="image" value="Image" />
                         <TextInput id="image" type="file" class="mt-1 block w-full"
                             @input="form.image = $event.target.files[0]" />
+                            <img
+                                :src="project.image"
+                                class="w-12 h-12 rounded-full"
+                            />
                         <InputError class="mt-2" :message="form.errors.image" />
                     </div>
                     <div class="flex items-center justify-end mt-4">
-                        <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }" :disabled="form.processing">
+                        <PrimaryButton class="ml-4" :class="{ 'opacity-25': form.processing }"
+                            :disabled="form.processing">
                             Update
                         </PrimaryButton>
                     </div>
